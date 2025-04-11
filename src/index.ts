@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { McpServer } from "@modelcontextprotocol/sdk/server/mcp.js";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { z } from "zod";
@@ -119,12 +121,9 @@ async function loadToolsFromJson(authToken: string) {
 // Start the server
 async function main() {
 
-  const args = process.argv;
-// Find the index of "--auth" in the arguments
-  const authIndex = args.indexOf('--auth');
+  const authToken = process.env.MCP_TOKEN;
   // Get the auth token if "--auth" is present
-  if (authIndex !== -1 && authIndex + 1 < args.length) {
-    const authToken = args[authIndex + 1];
+  if (authToken) {
     await loadToolsFromJson(authToken);
     const transport = new StdioServerTransport();
     await server.connect(transport);
