@@ -19,7 +19,7 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
          "mcpServers": {
            "dryai": {
             "command": "npx",
-            "args": ["-y", "@dryai/dryai-mcp-server"],
+            "args": ["-y", "<PATH-TO-LOCAL-MCP-SERVER>/dryai-mcp-server"],
             "env": {
                "MCP_TOKEN": "<MCP TOKEN>"
             }
