@@ -66,7 +66,7 @@ async function loadToolsFromJson(authToken: string) {
       console.error(`Failed to fetch tools: ${response.status} ${response.statusText}`);
       return;
     }
-    
+
     const dryTools = JSON.parse(JSON.stringify(await response.json()));
 
     //console.log(JSON.stringify(dryTools, null, 3))

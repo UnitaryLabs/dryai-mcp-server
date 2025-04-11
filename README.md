@@ -10,9 +10,9 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
 
 3. Ensure node (min v18) is installed on your system.
 
-4. Run npm build in the root of the dryai-mcp-server project 
+4. Run `npm run build` in the root of the dryai-mcp-server project 
 
-3. Modify your `claude_desktop_config.json` file to include the following configuration:
+5. Modify your `claude_desktop_config.json` file to include the following configuration:
 
    ```json
    {
@@ -20,7 +20,7 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
          "dryai": {
             "command": "node",
             "args": [
-               "<LOCAL_PATH>/dryai-mcp-server/build/index.js",
+               "<ABSOLUTE_LOCAL_PATH>/dryai-mcp-server/build/index.js",
                "--auth",
                "<MCP TOKEN>>"
             ]
@@ -29,5 +29,5 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
    }
    ```
 
-
+6. Run Claude Desktop - it will connect to dry and all of your configured smartspaces wlll appear as tools to ask questions and add items
 
