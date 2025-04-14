@@ -21,7 +21,12 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
 
 ## Steps to build your MCP Server and connect to Claude Desktop
 
-1. Modify your `claude_desktop_config.json` file to include the following configuration:
+1. Install Node.js (v18.x or later)
+   Download from: https://nodejs.org/
+   Verify installation by opening Command Prompt (CMD) and running:
+   ```node --version```
+
+2. Modify your `claude_desktop_config.json` file to include the following configuration:
  ```json
    {
       "mcpServers": {
@@ -35,6 +40,7 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
       }
    }
    ```
+You can access this by visiting Claude->Settings->Developer and pressing "Edit Config" 
 
 2. Run Claude Desktop - it will connect to dry and all of your configured smartspaces wlll appear as tools to ask questions and add items
 
