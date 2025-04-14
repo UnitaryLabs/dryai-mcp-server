@@ -71,47 +71,49 @@ async function loadToolsFromJson(authToken: string) {
 
     const dryTools = JSON.parse(JSON.stringify(await response.json()));
 
-    //console.log(JSON.stringify(dryTools, null, 3))
-    dryTools.smartspaces.forEach((tool: any) => {
+    if (dryTools.smartspaces && dryTools.smartspaces.length > 0) {
+      dryTools.smartspaces.forEach((tool: any) => {
 
-      server.tool(
-          tool.name,
-          tool.description,
-          {
-            query: z.string().describe(tool.schemaDescription),
-          },
-          async ({ query }) => {
-            const dryUrl = tool.type ? DRY_URL_CREATE_BASE : DRY_URL_QA_BASE;
-            const dryData: DryRequest = {
-              user: dryTools.user,
-              smartspace: tool.smartspace,
-              query: query,
-              type: tool.type
-            };
-            const dryResponse = await makeDryRequest<DryRequest, DryResponse>(dryUrl, dryData);
+        server.tool(
+            tool.name,
+            tool.description,
+            {
+              query: z.string().describe(tool.schemaDescription),
+            },
+            async ({ query }) => {
+              const dryUrl = tool.type ? DRY_URL_CREATE_BASE : DRY_URL_QA_BASE;
+              const dryData: DryRequest = {
+                user: dryTools.user,
+                smartspace: tool.smartspace,
+                query: query,
+                type: tool.type
+              };
+              const dryResponse = await makeDryRequest<DryRequest, DryResponse>(dryUrl, dryData);
 
-            if (!dryResponse) {
+              if (!dryResponse) {
+                return {
+                  content: [
+                    {
+                      type: "text",
+                      text: `Failed to get information for the query: ${query}.`
+                    }
+                  ]
+                };
+              }
+
               return {
                 content: [
                   {
                     type: "text",
-                    text: `Failed to get information for the query: ${query}.`
+                    text: dryResponse.dryContext || `No context found for the query: ${query}.`
                   }
                 ]
               };
             }
+        );
+      });
+    }
 
-            return {
-              content: [
-                {
-                  type: "text",
-                  text: dryResponse.dryContext || `No context found for the query: ${query}.`
-                }
-              ]
-            };
-          }
-      );
-    });
   } catch (error) {
     console.error("Error loading tools from JSON:", error);
   }
