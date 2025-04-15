@@ -7,6 +7,7 @@ This project implements an [MCP server](https://spec.modelcontextprotocol.io/) f
 1. Log in to [Dry.ai](https://dry.ai) and navigate to your **Dry Profile**.
 <img width="611" alt="Screenshot 2025-04-11 at 12 15 17 PM" src="https://github.com/user-attachments/assets/462d5e88-97f0-4f87-8e64-1e75c07bb8a8" />
 
+
 2. Generate an **MCP Token** from your profile. Make note of this token, as you will use it later. Select smartspacess that you are a member of
     which have been configured for MCP access. See 
    
