@@ -2,7 +2,7 @@
 
 This project implements an [MCP server](https://spec.modelcontextprotocol.io/) for [Dry.ai](https://dry.ai).
 
-## Steps to Configure the Your User
+## Steps to Configure your User
 
 1. Log in to [Dry.ai](https://dry.ai) and navigate to your **Dry Profile**.
 <img width="611" alt="Screenshot 2025-04-11 at 12 15 17 PM" src="https://github.com/user-attachments/assets/462d5e88-97f0-4f87-8e64-1e75c07bb8a8" />
