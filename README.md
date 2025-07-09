@@ -3,6 +3,7 @@
 The [Dry.ai](https://dry.ai) Model Context Protocol (MCP) server enables seamless integration between Claude and your Dry smartspaces, turning conversations into persistent, structured data. Currently, you can use this server to create and store memories and query the information in your database (smartspace).
 
 Begin by signing up for our alpha [here](https://dry.ai/getClaudeMemory)
+
 Watch a video of Dry in action [here](https://youtu.be/TW55riZYsZo?si=pgbnrMACYSxk321Q)
 
 
