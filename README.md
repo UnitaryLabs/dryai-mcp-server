@@ -18,14 +18,14 @@ Watch a video of Dry in action [here](https://youtu.be/TW55riZYsZo?si=pgbnrMACYS
    
 <img width="889" alt="image" src="https://github.com/user-attachments/assets/5ecc2bde-61e6-491b-8858-ce2f5e8a8eb8" />
 
-## Steps to Configure a Smartspace
+## Steps to Configure a Smartspace for MCP
 
-1. Open the settings for the smartspace which you want to connect. Click the "Chat" tab and show More Options
+1. Open the settings for the smartspace that you want to connect. Click the "Chat" tab and show More Options
 <img width="1029" alt="image" src="https://github.com/user-attachments/assets/dfa4c2c0-d1ac-495f-b2a0-50995b3c2df7" />
 
-2. Click the toggle to enable MCP on teh smartspace and provide a description that will let Claude know when you want to send questions to this smartspace.
+2. Click the toggle to enable MCP on the smartspace and provide a description that will let Claude know when you want to send questions to this smartspace.
 
-## Steps to build your MCP Server and connect to Claude Desktop
+## Steps to connect Dry to Claude Desktop
 
 1. Install Node.js (v18.x or later)
    Download from: https://nodejs.org/
@@ -48,5 +48,5 @@ Watch a video of Dry in action [here](https://youtu.be/TW55riZYsZo?si=pgbnrMACYS
    ```
 You can access this by visiting Claude->Settings->Developer and pressing "Edit Config" 
 
-2. Run Claude Desktop - it will connect to dry and all of your configured smartspaces wlll appear as tools to ask questions and add items
+2. Run Claude Desktop - it will connect to Dry and all of your configured smartspaces will appear as tools to ask questions and add items. Every time you create or install new memory types in your Dry space, you'll need to restart your Claude desktop app to sync its tools with the latest state of your Dry smartspace.
 
